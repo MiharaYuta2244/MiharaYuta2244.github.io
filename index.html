@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ミハラ ユウタ | ゲームプログラマー ポートフォリオ (2028年度 新卒採用)</title>
+  <meta name="description" content="ゲームプログラマー志望・ミハラ ユウタのポートフォリオサイト。DirectX 12自作エンジン「SMASH OUT」、Unityチーム開発作品など計14作品を掲載。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/avatar.svg">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#top" class="nav-brand">
+        <div class="brand-avatar">
+          <img src="assets/images/avatar.svg" alt="ミハラ ユウタ">
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">
+            ミハラ ユウタ
+            <span class="role-pill">2028卒</span>
+          </div>
+          <span class="brand-sub">Game Programmer Portfolio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#top" class="nav-link active">Home</a></li>
+          <li><a href="#projects" class="nav-link">就職作品</a></li>
+          <li><a href="#tech-dive" class="nav-link">技術解説</a></li>
+          <li><a href="#team-projects" class="nav-link">チーム制作</a></li>
+          <li><a href="#archive" class="nav-link">全作品 (14作)</a></li>
+          <li><a href="#about" class="nav-link">自己紹介 &amp; スキル</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ======================================================================
+         HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              2028年度 新卒採用 志望 / ポートフォリオ
+            </div>
+            
+            <h1 class="hero-title">
+              ゲームプログラマー<br>
+              <span class="accent">ミハラ ユウタ</span>
+            </h1>
+
+            <div class="hero-subtitle">
+              DirectX 12 自作描画エンジン ＆ インゲーム・UI開発
+            </div>
+
+            <p class="hero-description">
+              「UIゲージに頼らずとも、パッと見で直感的に戦況を理解できる描画演出」を追究しています。DirectX 12によるデカールの動的バッチングや15種以上のポストエフェクト、レイキャストによる視野ジオメトリ生成など、ローレベルAPIとゲームロジックを融合させた開発に取り組んでいます。
+            </p>
+
+            <!-- Metrics Quick Strip -->
+            <div class="hero-metrics">
+              <div class="metric-card">
+                <div class="metric-value">2年</div>
+                <div class="metric-label">DirectX 12</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">3年</div>
+                <div class="metric-label">Unity / C#</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">14作品</div>
+                <div class="metric-label">制作実績 (2024-26)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">15+</div>
+                <div class="metric-label">ポストエフェクト</div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                就職作品 (SMASH OUT) を見る
+              </a>
+              <a href="#archive" class="btn-secondary">
+                過去14作品一覧
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Showcase Card -->
+          <div class="hero-showcase">
+            <div class="showcase-header">
+              <span class="showcase-tag">★ メイン就職作品 (個人開発)</span>
+              <span class="pill" style="color: var(--accent-cyan);">2026.04 〜 開発中</span>
+            </div>
+            <div class="showcase-img-container" onclick="openLightboxImage('assets/images/smash-out-main.svg', 'SMASH OUT メインビジュアル')">
+              <img src="assets/images/smash-out-main.svg" alt="SMASH OUT メインビジュアル">
+            </div>
+            <h3 class="showcase-title">SMASH OUT</h3>
+            <p class="showcase-desc">
+              UIレスな視覚伝達を追求した3D見下ろしアクション。DirectX 12自作描画エンジン上で動作し、動的デカールバッチングとシェーダー連携を実装。
+            </p>
+            <div class="showcase-pills">
+              <span class="pill">DirectX 12</span>
+              <span class="pill">C++</span>
+              <span class="pill">HLSL</span>
+              <span class="pill">3D Action</span>
+              <span class="pill">自作エンジン</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FILTER BAR
+         ====================================================================== -->
+    <div class="filter-bar">
+      <div class="container filter-container">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">全作品表示 (All)</button>
+          <button class="filter-btn" data-filter="dx12">DirectX 12 / C++</button>
+          <button class="filter-btn" data-filter="unity">Unity / C#</button>
+          <button class="filter-btn" data-filter="featured">就職作品 (Featured)</button>
+          <button class="filter-btn" data-filter="team">チーム制作 (Team)</button>
+          <button class="filter-btn" data-filter="archive">過去作アーカイブ (14作)</button>
+        </div>
+        <div class="project-count">
+          Showing: Mihara's Game Dev Portfolio
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         SECTION 01: FEATURED PROJECT (SMASH OUT)
+         ====================================================================== -->
+    <section class="section" id="projects" data-category="featured dx12">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">01 / FEATURED PROJECT</span>
+          <h2 class="section-title">
+            現在制作中のゲーム (就職作品)
+          </h2>
+          <p class="section-subtitle">
+            今までの学びの集大成として制作中の個人プロジェクトです。DirectX 12による自作レンダリング基盤と、直感的なアクション性を実現する技術検証を盛り込んでいます。
+          </p>
+        </div>
+
+        <!-- Featured Box -->
+        <div class="featured-box">
+          <div class="featured-top-banner">
+            <div class="featured-info">
+              <h3>
+                SMASH OUT
+                <span class="pill" style="font-size: 0.8rem; background: rgba(56, 189, 248, 0.2); color: var(--accent-cyan);">個人開発</span>
+              </h3>
+              <div class="featured-catch">
+                できるだけUIに頼らずに、プレイヤーがパッと見で戦況を理解できる3D見下ろしアクション
+              </div>
+              <p class="featured-overview">
+                敵の索敵コーン、移動痕跡、攻撃による血痕デカール、HP低下に伴う視覚エフェクトなど、ゲーム内ロジックとグラフィックス描画を密接に連動させています。DirectX 12のインスタンスバッファと連想配列を活用し、高速な描画性能を維持しています。
+              </p>
+
+              <!-- Specifications Grid -->
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-key">ジャンル</span>
+                  <span class="spec-val">3D見下ろしアクション</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">制作開始時期</span>
+                  <span class="spec-val">2026年4月 〜 (現在も鋭意開発中)</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">開発環境・API</span>
+                  <span class="spec-val">DirectX 12 / C++ / HLSL (自作エンジン)</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">担当範囲</span>
+                  <span class="spec-val">全般（設計・レンダラー・シェーダー・ロジック）</span>
+                </div>
+              </div>
+
+              <div class="featured-actions">
+                <button class="btn-primary" data-open-project="smash-out">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  詳細モーダルを開く
+                </button>
+                <button class="btn-secondary" onclick="triggerPlayVideo('SMASH OUT')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  プレイ動画を視聴
+                </button>
+              </div>
+            </div>
+
+            <!-- Media Preview & Screenshots Strip -->
+            <div class="featured-media">
+              <div class="main-preview-card" onclick="openLightboxImage('assets/images/smash-out-main.svg', 'SMASH OUT メイン見下ろし戦闘画面')">
+                <img src="assets/images/smash-out-main.svg" alt="SMASH OUT メイン画面">
+                <div class="preview-badge-overlay">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  クリックで拡大表示
+                </div>
+              </div>
+
+              <!-- Strip of 4 Screenshots -->
+              <div class="screenshot-strip">
+                <div class="strip-item" onclick="openLightboxImage('assets/images/smash-out-screen-1.svg', '戦闘シーン（索敵コーンとデカール）')">
+                  <img src="assets/images/smash-out-screen-1.svg" alt="戦闘シーン">
+                </div>
+                <div class="strip-item" onclick="openLightboxImage('assets/images/smash-out-screen-2.svg', 'デカールバッチ処理 & RT:パンチUI')">
+                  <img src="assets/images/smash-out-screen-2.svg" alt="デカール描画">
+                </div>
+                <div class="strip-item" onclick="openLightboxImage('assets/images/smash-out-screen-3.svg', '15種以上のポストエフェクト発動')">
+                  <img src="assets/images/smash-out-screen-3.svg" alt="ポストエフェクト">
+                </div>
+                <div class="strip-item" onclick="openLightboxImage('assets/images/smash-out-screen-4.svg', 'タイトル画面（Play / Quit）')">
+                  <img src="assets/images/smash-out-screen-4.svg" alt="タイトル画面">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================================================================
+               TECH DEEP-DIVE SECTION (SLIDES 5, 6, 7)
+               ================================================================== -->
+          <div class="tech-highlights-section" id="tech-dive">
+            <h4 class="tech-section-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              就職作品 実装紹介（こだわりの技術ポイント）
+            </h4>
+
+            <div class="tech-grid">
+              <!-- Tech Point 1: Decal Batching (Slide 5) -->
+              <div class="tech-card">
+                <div class="tech-card-header">
+                  <div class="tech-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                  </div>
+                  <div>
+                    <h5 class="tech-card-title">デカールのテクスチャ別バッチ処理</h5>
+                    <div class="tech-card-subtitle">連想配列グループ化 × 専用SRV &amp; インスタンスバッファ</div>
+                  </div>
+                </div>
+
+                <div class="tech-card-diagram" onclick="openLightboxImage('assets/images/smash-out-tech-decal.svg', 'デカールバッチング アーキテクチャ図')">
+                  <img src="assets/images/smash-out-tech-decal.svg" alt="デカールバッチング アーキテクチャ図">
+                </div>
+
+                <p class="tech-card-desc">
+                  連想配列を使ってテクスチャ単位でデカールデータを動的に自動グループ化しています。グループ毎に専用のSRVとインスタンスバッファを割り当てることで、描画時のステート（テクスチャ）切り替えコストを最小化しました。
+                </p>
+
+                <ul class="tech-bullets">
+                  <li>テクスチャIDに応じた動的グループ自動生成アルゴリズム</li>
+                  <li><code>DrawIndexedInstanced</code> によるドローコール集約</li>
+                  <li>乱戦時でもステート切り替えオーバーヘッドをほぼゼロに維持</li>
+                </ul>
+              </div>
+
+              <!-- Tech Point 2: Post-Processing (Slide 6) -->
+              <div class="tech-card">
+                <div class="tech-card-header">
+                  <div class="tech-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  </div>
+                  <div>
+                    <h5 class="tech-card-title">15種類以上のポストエフェクト</h5>
+                    <div class="tech-card-subtitle">シェーダーパラメータの毎フレームGPU動的転送</div>
+                  </div>
+                </div>
+
+                <div class="tech-card-diagram" onclick="openLightboxImage('assets/images/smash-out-tech-posteffect.svg', 'ポストエフェクト パイプライン図')">
+                  <img src="assets/images/smash-out-tech-posteffect.svg" alt="ポストエフェクト パイプライン図">
+                </div>
+
+                <p class="tech-card-desc">
+                  Glitch、Radial Blur、Depth Outlineなど15種類以上のエフェクトを自作HLSLで実装。ゲーム内イベントに合わせてシェーダーへのパラメータ（強度や範囲など）を毎フレームGPUへ転送し、滑らかな演出の遷移を実現しています。
+                </p>
+
+                <ul class="tech-bullets">
+                  <li>Glitch / Radial Blur / Depth Outline / Chromatic Aberration など15種+</li>
+                  <li>ConstantBuffer へのイージング補間ストリーミング更新</li>
+                  <li>画面切り替え・被弾インパクト演出の動的制御</li>
+                </ul>
+              </div>
+
+              <!-- Tech Point 3: Vision Mesh Generation (Slide 7-1) -->
+              <div class="tech-card">
+                <div class="tech-card-header">
+                  <div class="tech-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </div>
+                  <div>
+                    <h5 class="tech-card-title">正確な視界の動的生成</h5>
+                    <div class="tech-card-subtitle">レイキャスト × 頂点メッシュ動的制御</div>
+                  </div>
+                </div>
+
+                <div class="tech-card-diagram" onclick="openLightboxImage('assets/images/smash-out-tech-vision.svg', '視界メッシュ動的生成 図解')">
+                  <img src="assets/images/smash-out-tech-vision.svg" alt="視界メッシュ動的生成 図解">
+                </div>
+
+                <p class="tech-card-desc">
+                  敵の索敵範囲が壁を貫通しないよう、放射状にレイキャストを行い当たり判定を取得。その衝突結果をメッシュの頂点座標に直接反映し、障害物で正確に遮られる視界コーンを毎フレーム描画しています。
+                </p>
+
+                <ul class="tech-bullets">
+                  <li>放射状高密度レイキャストによるオクルージョン検出</li>
+                  <li>交差座標に基づく動的頂点バッファ（Dynamic VB）リアルタイム書き換え</li>
+                  <li>ステルス時の壁際駆け引きにおける不自然な壁抜けを解消</li>
+                </ul>
+              </div>
+
+              <!-- Tech Point 4: Status Visualization (Slide 7-2) -->
+              <div class="tech-card">
+                <div class="tech-card-header">
+                  <div class="tech-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </div>
+                  <div>
+                    <h5 class="tech-card-title">状況を伝える描画制御</h5>
+                    <div class="tech-card-subtitle">エフェクト・シェーダー制御によるHP可視化</div>
+                  </div>
+                </div>
+
+                <div class="tech-card-diagram" onclick="openLightboxImage('assets/images/smash-out-tech-hp.svg', 'HP連動描画制御 図解')">
+                  <img src="assets/images/smash-out-tech-hp.svg" alt="HP連動描画制御 図解">
+                </div>
+
+                <p class="tech-card-desc">
+                  プレイヤーの残りHPに応じて血痕テクスチャのサイズや生成頻度を動的に変化させるなど、ゲームパラメータと描画を連動させています。UIゲージを見なくても自分の生存危機を直感できます。
+                </p>
+
+                <ul class="tech-bullets">
+                  <li>体力残量パラメータとパーティクル・デカール生成レートのリアルタイム同期</li>
+                  <li>瀕死時の画面周辺減光（Vignette）と心拍パルスの連動</li>
+                  <li>UIレスで没入感の高いゲームプレイ体験の実現</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Note from Slide 7 -->
+            <div style="margin-top: 24px; padding: 16px 20px; background: rgba(56, 189, 248, 0.08); border-left: 4px solid var(--accent-cyan); border-radius: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+              <span style="font-size: 0.92rem; color: #e2e8f0;">
+                💡 <strong>より詳しい内部設計・ソースコード解説：</strong>「プログラム説明資料（PDF）」にてクラス設計やHLSLコードを詳細に解説しています。
+              </span>
+              <a href="#contact" class="btn-card btn-card-primary" style="flex: 0 0 auto;">
+                説明資料について問い合わせる
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 02: TEAM PROJECTS (SLIDES 10, 11, 12)
+         ====================================================================== -->
+    <section class="section" id="team-projects" data-category="team unity">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">02 / TEAM DEVELOPMENT</span>
+          <h2 class="section-title">
+            チーム制作作品（ピックアップ3作品）
+          </h2>
+          <p class="section-subtitle">
+            Unity / C# を用いた3人チーム（各制作期間2ヶ月）での開発作品です。各作品において「インゲーム」「UI」「プレイヤー」の主担当として実装を牽引しました。
+          </p>
+        </div>
+
+        <div class="team-projects-grid">
+          <!-- Project 1: Kuma Cider (Slide 10) -->
+          <article class="project-card" data-category="team unity">
+            <div class="project-card-thumb" onclick="openLightboxImage('assets/images/kuma-cider-main.svg', 'おかしあつめてクマサイダー メイン')">
+              <img src="assets/images/kuma-cider-main.svg" alt="おかしあつめてクマサイダー">
+              <div class="role-badge-overlay">担当: インゲーム</div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-card-title">おかしあつめてクマサイダー</h3>
+                <div class="project-card-meta">
+                  <span>アクション</span> • <span>制作2ヶ月 (3人)</span>
+                </div>
+              </div>
+
+              <p class="project-card-desc">
+                お菓子を集めてサイダーを満たすポップな3Dアクション。プレイヤーの移動、お菓子取得判定、制限時間・スコア計算、およびAランク判定等のリザルト同期を担当しました。
+              </p>
+
+              <!-- 3-screen mini strip matching Slide 10 -->
+              <div class="three-screen-strip">
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/kuma-cider-screen-1.svg', 'クマサイダー : タイトル画面')">
+                  <img src="assets/images/kuma-cider-screen-1.svg" alt="タイトル画面">
+                  <div class="mini-screen-label">タイトル</div>
+                </div>
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/kuma-cider-screen-2.svg', 'クマサイダー : プレイ画面')">
+                  <img src="assets/images/kuma-cider-screen-2.svg" alt="プレイ画面">
+                  <div class="mini-screen-label">プレイ</div>
+                </div>
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/kuma-cider-screen-3.svg', 'クマサイダー : リザルト画面 (Aランク!! 41735)')">
+                  <img src="assets/images/kuma-cider-screen-3.svg" alt="リザルト画面">
+                  <div class="mini-screen-label">リザルト</div>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="pill">Unity</span>
+                <span class="pill">C#</span>
+                <span class="pill">3人チーム</span>
+                <span class="pill">担当: インゲーム</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn-card btn-card-primary" data-open-project="kuma-cider">
+                  詳細を見る
+                </button>
+                <button class="btn-card btn-card-secondary" onclick="triggerPlayVideo('おかしあつめてクマサイダー')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  プレイ動画
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Biripiyo Rumble (Slide 11) -->
+          <article class="project-card" data-category="team unity">
+            <div class="project-card-thumb" onclick="openLightboxImage('assets/images/biripiyo-main.svg', 'ビリピヨランブル !! メイン')">
+              <img src="assets/images/biripiyo-main.svg" alt="ビリピヨランブル !!">
+              <div class="role-badge-overlay">担当: UI</div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-card-title">ビリピヨランブル !!</h3>
+                <div class="project-card-meta">
+                  <span>アクション</span> • <span>制作2ヶ月 (3名)</span>
+                </div>
+              </div>
+
+              <p class="project-card-desc">
+                ドット絵の城内で電撃を避けながら競うタイムアタックアクション。メニュー階層遷移、ミリ秒単位のタイマーHUD描画、ランキング、リザルト演出ステートマシンを担当。
+              </p>
+
+              <!-- 3-screen mini strip matching Slide 11 -->
+              <div class="three-screen-strip">
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/biripiyo-screen-1.svg', 'ビリピヨランブル : タイトル画面')">
+                  <img src="assets/images/biripiyo-screen-1.svg" alt="タイトル画面">
+                  <div class="mini-screen-label">タイトル</div>
+                </div>
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/biripiyo-screen-2.svg', 'ビリピヨランブル : プレイ画面')">
+                  <img src="assets/images/biripiyo-screen-2.svg" alt="プレイ画面">
+                  <div class="mini-screen-label">プレイ</div>
+                </div>
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/biripiyo-screen-3.svg', 'ビリピヨランブル : リザルト画面 (00:53.20)')">
+                  <img src="assets/images/biripiyo-screen-3.svg" alt="リザルト画面">
+                  <div class="mini-screen-label">リザルト</div>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="pill">Unity</span>
+                <span class="pill">C#</span>
+                <span class="pill">Pixel Art</span>
+                <span class="pill">担当: UI</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn-card btn-card-primary" data-open-project="biripiyo-rumble">
+                  詳細を見る
+                </button>
+                <button class="btn-card btn-card-secondary" onclick="triggerPlayVideo('ビリピヨランブル !!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  プレイ動画
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Soutai Kasa (Slide 12) -->
+          <article class="project-card" data-category="team unity">
+            <div class="project-card-thumb" onclick="openLightboxImage('assets/images/soutaikasa-main.svg', '相対傘 メイン')">
+              <img src="assets/images/soutaikasa-main.svg" alt="相対傘">
+              <div class="role-badge-overlay">担当: プレイヤー</div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <h3 class="project-card-title">相対傘</h3>
+                <div class="project-card-meta">
+                  <span>アクション</span> • <span>制作2ヶ月 (3名)</span>
+                </div>
+              </div>
+
+              <p class="project-card-desc">
+                和風の世界観とレトロTV（CRT）走査線演出が融合した傘アクション。WASD移動＋マウスエイムによる傘の発射・近接攻撃判定、ボス演出ムービーへのカメラ連携を実装。
+              </p>
+
+              <!-- 3-screen mini strip matching Slide 12 -->
+              <div class="three-screen-strip">
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/soutaikasa-screen-1.svg', '相対傘 : タイトル画面 (対傘)')">
+                  <img src="assets/images/soutaikasa-screen-1.svg" alt="タイトル画面">
+                  <div class="mini-screen-label">タイトル</div>
+                </div>
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/soutaikasa-screen-2.svg', '相対傘 : プレイ画面 (WASDエイム発射)')">
+                  <img src="assets/images/soutaikasa-screen-2.svg" alt="プレイ画面">
+                  <div class="mini-screen-label">プレイ</div>
+                </div>
+                <div class="mini-screen" onclick="openLightboxImage('assets/images/soutaikasa-screen-3.svg', '相対傘 : ムービーシーン (唐笠門左衛門なりぃ!!)')">
+                  <img src="assets/images/soutaikasa-screen-3.svg" alt="ムービーシーン">
+                  <div class="mini-screen-label">ムービー</div>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="pill">Unity</span>
+                <span class="pill">C#</span>
+                <span class="pill">CRT Shader</span>
+                <span class="pill">担当: プレイヤー</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn-card btn-card-primary" data-open-project="soutaikasa">
+                  詳細を見る
+                </button>
+                <button class="btn-card btn-card-secondary" onclick="triggerPlayVideo('相対傘')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  プレイ動画
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 03: ARCHIVE (SLIDE 9 - ALL 14 WORKS)
+         ====================================================================== -->
+    <section class="section" id="archive" data-category="archive">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">03 / PROJECT ARCHIVE</span>
+          <h2 class="section-title">
+            過去の作品一覧 (計14作品)
+          </h2>
+          <p class="section-subtitle">
+            2024〜2026年の間に、個人開発・チーム開発・ゲームジャムを合わせて計14作品を制作しました。自作C++エンジンからUnity、UE5まで多彩な開発経験を蓄積しています。
+          </p>
+        </div>
+
+        <div class="archive-grid">
+          <!-- 1. SMASH OUT -->
+          <div class="archive-card" data-category="dx12 featured">
+            <div class="archive-card-top">
+              <span class="archive-year">2026</span>
+              <span class="archive-cat">個人 / 就職作品</span>
+            </div>
+            <h4 class="archive-title">SMASH OUT</h4>
+            <div class="archive-engine">DirectX 12 / C++</div>
+            <p class="archive-desc">3D見下ろしアクション。テクスチャ別バッチング、15種ポストエフェクト、レイキャスト視野生成。</p>
+          </div>
+
+          <!-- 2. おかしあつめてクマサイダー -->
+          <div class="archive-card" data-category="unity team">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">3人チーム / 2ヶ月</span>
+            </div>
+            <h4 class="archive-title">おかしあつめてクマサイダー</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">3Dアクション。担当：インゲーム（プレイヤー制御・お菓子取得・スコア・リザルト演出）。</p>
+          </div>
+
+          <!-- 3. ビリピヨランブル !! -->
+          <div class="archive-card" data-category="unity team">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">3人チーム / 2ヶ月</span>
+            </div>
+            <h4 class="archive-title">ビリピヨランブル !!</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">2Dピクセルアクション。担当：UI（ミリ秒タイマーHUD・ランキング・メニュー遷移制御）。</p>
+          </div>
+
+          <!-- 4. 相対傘 -->
+          <div class="archive-card" data-category="unity team">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">3人チーム / 2ヶ月</span>
+            </div>
+            <h4 class="archive-title">相対傘</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">和風CRTアクション。担当：プレイヤー（傘エイム＆射撃・近接判定・カメラムービー演出）。</p>
+          </div>
+
+          <!-- 5. STRAYSHOT BOOTLEG -->
+          <div class="archive-card" data-category="dx12">
+            <div class="archive-card-top">
+              <span class="archive-year">2024</span>
+              <span class="archive-cat">個人制作</span>
+            </div>
+            <h4 class="archive-title">STRAYSHOT BOOTLEG</h4>
+            <div class="archive-engine">C++ / 自作フレームワーク</div>
+            <p class="archive-desc">レトロアーケード風の高速シューティングゲーム。大量の弾幕生成と衝突判定の最適化。</p>
+          </div>
+
+          <!-- 6. BALLOON BOY -->
+          <div class="archive-card" data-category="dx12">
+            <div class="archive-card-top">
+              <span class="archive-year">2024</span>
+              <span class="archive-cat">個人制作</span>
+            </div>
+            <h4 class="archive-title">BALLOON BOY (KAMATA ENGINE)</h4>
+            <div class="archive-engine">C++ (自作2Dエンジン)</div>
+            <p class="archive-desc">自作2Dエンジンを用いたバルーン浮遊アクションゲーム。物理演算と浮力挙動シミュレーション。</p>
+          </div>
+
+          <!-- 7. Climb & Drop -->
+          <div class="archive-card" data-category="unity team">
+            <div class="archive-card-top">
+              <span class="archive-year">2024</span>
+              <span class="archive-cat">チーム制作</span>
+            </div>
+            <h4 class="archive-title">Climb &amp; Drop</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">上下移動を駆使してステージを攻略する2Dパズルプラットフォーマー。ギミックロジック担当。</p>
+          </div>
+
+          <!-- 8. カラフルボム (Color Bomber) -->
+          <div class="archive-card" data-category="unity team">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">チーム制作</span>
+            </div>
+            <h4 class="archive-title">カラフルボム (Color Bomber)</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">床を塗って陣地を広げるパーティーアクション。シェーダーによるリアルタイム領域着色処理。</p>
+          </div>
+
+          <!-- 9. TURN ON THE LIGHT -->
+          <div class="archive-card" data-category="unity">
+            <div class="archive-card-top">
+              <span class="archive-year">2024</span>
+              <span class="archive-cat">Game Jam</span>
+            </div>
+            <h4 class="archive-title">TURN ON THE LIGHT</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">光と影を切り替えて進むステルスホラーアクション。動的ライティングと視野判定ギミック。</p>
+          </div>
+
+          <!-- 10. エキエキ (Eki-Eki) -->
+          <div class="archive-card" data-category="unity team">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">チーム制作</span>
+            </div>
+            <h4 class="archive-title">エキエキ (Eki-Eki)</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">サイバー調のハイスピードラン＆ガンアクション。リズミカルなコンボシステムとヒットエフェクト。</p>
+          </div>
+
+          <!-- 11. ガチ避ケ -->
+          <div class="archive-card" data-category="dx12">
+            <div class="archive-card-top">
+              <span class="archive-year">2024</span>
+              <span class="archive-cat">個人制作</span>
+            </div>
+            <h4 class="archive-title">ガチ避ケ</h4>
+            <div class="archive-engine">C++</div>
+            <p class="archive-desc">極限の反射神経を試す弾幕回避ミニゲーム。毎フレーム高精度なOBB/円形当たり判定を実装。</p>
+          </div>
+
+          <!-- 12. バトルぶち壊シアム -->
+          <div class="archive-card" data-category="team">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">チーム制作</span>
+            </div>
+            <h4 class="archive-title">バトルぶち壊シアム</h4>
+            <div class="archive-engine">Unreal Engine 5</div>
+            <p class="archive-desc">リング内のオブジェクトを破壊しながら戦うマルチプレイヤー物理格闘ゲーム。Chaos物理連携。</p>
+          </div>
+
+          <!-- 13. ClimbDrop 3D -->
+          <div class="archive-card" data-category="unity">
+            <div class="archive-card-top">
+              <span class="archive-year">2025</span>
+              <span class="archive-cat">プロトタイプ</span>
+            </div>
+            <h4 class="archive-title">ClimbDrop 3D</h4>
+            <div class="archive-engine">Unity / C#</div>
+            <p class="archive-desc">3D空間におけるワイヤーアクションと自由落下挙動を検証したテクニカルプロトタイプ。</p>
+          </div>
+
+          <!-- 14. DirectX12 Graphics Sandbox -->
+          <div class="archive-card" data-category="dx12">
+            <div class="archive-card-top">
+              <span class="archive-year">2026</span>
+              <span class="archive-cat">技術検証</span>
+            </div>
+            <h4 class="archive-title">DX12 Graphics Sandbox</h4>
+            <div class="archive-engine">DirectX 12 / HLSL</div>
+            <p class="archive-desc">Compute ShaderによるGPUパーティクルおよびカスケードシャドウマップの実験プロジェクト。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 04: PROFILE & SKILLS (SLIDE 2)
+         ====================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">04 / ABOUT &amp; SKILLS</span>
+          <h2 class="section-title">
+            自己紹介 ＆ スキル
+          </h2>
+          <p class="section-subtitle">
+            ゲームプログラマーとして、描画パイプラインの低レイヤーからユーザーが直感的に楽しむゲームロジックまで一気通貫で開発できます。
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Profile Card -->
+          <div class="profile-card">
+            <div class="profile-avatar-large">
+              <img src="assets/images/avatar.svg" alt="ミハラ ユウタ">
+            </div>
+            <h3 class="profile-name">ミハラ ユウタ</h3>
+            <div class="profile-en">Yuta Mihara</div>
+            <div class="profile-target">2028年度 新卒採用 志望</div>
+
+            <p class="profile-bio">
+              DirectX 12を用いた自作レンダリングエンジンの開発や、Unityによるチームゲーム制作に打ち込んできました。「直感的で気持ちのいい手応え」をグラフィックスと制御の両面から追求できるエンジニアを目指しています。
+            </p>
+
+            <ul class="profile-meta-list">
+              <li class="profile-meta-item">
+                <span class="meta-label">担当職種 :</span>
+                <span class="meta-value">ゲームプログラマー</span>
+              </li>
+              <li class="profile-meta-item">
+                <span class="meta-label">趣味 :</span>
+                <span class="meta-value">音楽、カタン（ボードゲーム）</span>
+              </li>
+              <li class="profile-meta-item">
+                <span class="meta-label">制作歴 :</span>
+                <span class="meta-value">14作品 (個人・チーム)</span>
+              </li>
+              <li class="profile-meta-item">
+                <span class="meta-label">卒業時期 :</span>
+                <span class="meta-value">2028年3月 卒業見込み</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skills Column -->
+          <div class="skills-column">
+            <!-- Languages -->
+            <div class="skill-category-card">
+              <h4 class="skill-cat-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                プログラミング言語
+              </h4>
+              <div class="skill-items-list">
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">C / C++</span>
+                    <span class="skill-years">使用歴 2年+ / ★★★★★</span>
+                  </div>
+                  <p class="skill-desc">DirectX 12自作エンジン、スマートポインタによるメモリ管理、マルチスレッド基礎、データ指向設計。</p>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">C#</span>
+                    <span class="skill-years">使用歴 3年 / ★★★★☆</span>
+                  </div>
+                  <p class="skill-desc">Unityでのインゲーム、UIステートマシン、イベント駆動設計、UniTaskを用いた非同期処理。</p>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">HLSL (Shader)</span>
+                    <span class="skill-years">使用歴 2年 / ★★★★☆</span>
+                  </div>
+                  <p class="skill-desc">頂点/ピクセルシェーダー、ポストプロセス（15種+）、デカール描画、定数バッファ動的転送。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game Engines & Graphics API -->
+            <div class="skill-category-card">
+              <h4 class="skill-cat-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                ゲームエンジン ＆ グラフィックス API
+              </h4>
+              <div class="skill-items-list">
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">DirectX 12</span>
+                    <span class="skill-years">使用歴 2年 / ★★★★☆</span>
+                  </div>
+                  <p class="skill-desc">CommandQueue、DescriptorHeap、RootSignature、動的バッチ処理、描画パイプライン構築。</p>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">Unity</span>
+                    <span class="skill-years">使用歴 3年 / ★★★★★</span>
+                  </div>
+                  <p class="skill-desc">3人チーム開発でのメインエンジン。物理演算連携、アニメーション制御、UIシステム、Prefab管理。</p>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">Unreal Engine 5</span>
+                    <span class="skill-years">使用歴 1年 / ★★★☆☆</span>
+                  </div>
+                  <p class="skill-desc">C++ / Blueprintハイブリッド開発、物理格闘ゲーム制作（Chaos破壊物理検証）。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools & VCS -->
+            <div class="skill-category-card">
+              <h4 class="skill-cat-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                バージョン管理 ＆ 開発ツール
+              </h4>
+              <div class="skill-items-list">
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">Git / GitHub</span>
+                    <span class="skill-years">使用歴 3年 / ★★★★☆</span>
+                  </div>
+                  <p class="skill-desc">GitHub Flow、Pull Request、チーム開発時のマージコンフリクト解消、GitHub Pagesホスティング。</p>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-row-top">
+                    <span class="skill-name">Visual Studio / RenderDoc</span>
+                    <span class="skill-years">使用歴 2年 / ★★★★☆</span>
+                  </div>
+                  <p class="skill-desc">DirectX 12のキャプチャ解析、ドローコールプロファイリング、シェーダーデバッグ。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 05: CONTACT & FOOTER
+         ====================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <h2 class="contact-title">Contact &amp; Documents</h2>
+          <p class="contact-desc">
+            作品へのご質問、プログラム設計資料（PDF）の送付依頼、面談・選考のご相談など、下記よりお気軽にご連絡ください。
+          </p>
+
+          <div class="contact-links">
+            <a href="https://github.com" target="_blank" rel="noopener" class="btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub Profile
+            </a>
+            <a href="mailto:contact@example.com" class="btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              メールを送る
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Yuta Mihara (ミハラ ユウタ). All rights reserved.</p>
+      <p class="footer-credits">Game Programmer Portfolio — Designed for GitHub Pages</p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PROJECT DETAILS MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-content-body" id="modal-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       LIGHTBOX MODAL (FOR SCREENSHOTS & DIAGRAMS)
+       ======================================================================== -->
+  <div class="modal-overlay" id="lightbox-modal" onclick="closeLightbox()">
+    <div style="max-width: 90vw; max-height: 90vh; text-align: center;" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
+      <img id="lightbox-img" src="" alt="Zoom preview" style="max-width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 1px solid var(--border-color);">
+      <p id="lightbox-caption" style="margin-top: 12px; color: var(--accent-cyan); font-size: 0.95rem; font-weight: 600;"></p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       VIDEO PREVIEW MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="video-modal">
+    <div class="modal-container" style="max-width: 800px;">
+      <button class="modal-close-btn" onclick="closeVideoModal()" aria-label="Close video">✕</button>
+      <div class="modal-content-body">
+        <h3 id="video-modal-title" style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 16px;">
+          プレイ動画
+        </h3>
+        
+        <div style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-color); position: relative;">
+          <!-- Video player container: User can replace with YouTube iframe or HTML5 video -->
+          <div style="text-align: center; padding: 24px;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="var(--accent-cyan)" style="margin-bottom: 14px; opacity: 0.9;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 8px;">動画プレイヤー / プレースホルダー</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 16px;">
+              YouTubeにアップロードした動画の埋め込みコード（iframe）、または <code>assets/videos/</code> に配置したMP4動画を差し替えて再生できます。
+            </p>
+            <div style="background: rgba(255,255,255,0.06); padding: 8px 14px; border-radius: 6px; display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">
+              js/projects-data.js の videoUrl にリンクを設定可能
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+          <button class="btn-secondary" onclick="closeVideoModal()">閉じる</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

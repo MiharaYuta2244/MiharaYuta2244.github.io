@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="peBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1726"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="700" height="360" rx="12" fill="url(#peBg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="350" y="38" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">
+    15種類以上のポストエフェクト &amp; GPU毎フレームパラメータ転送
+  </text>
+  <text x="350" y="58" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">
+    ゲーム内イベント（強打・被弾・覚醒）に応じてシェーダー定数バッファを動的補間制御
+  </text>
+
+  <!-- Left: Game Events & Parameters (CPU) -->
+  <g transform="translate(35, 85)">
+    <rect width="190" height="240" rx="8" fill="#111c30" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect width="190" height="34" rx="8" fill="#0284c7" fill-opacity="0.3"/>
+    <text x="95" y="22" fill="#7dd3fc" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">CPU : イベント &amp; 補間</text>
+
+    <!-- Events -->
+    <g transform="translate(15, 45)">
+      <rect width="160" height="28" rx="4" fill="#1e293b"/>
+      <text x="80" y="18" fill="#f8fafc" font-size="11" text-anchor="middle">⚡ 強打 / クリティカル</text>
+    </g>
+    <g transform="translate(15, 80)">
+      <rect width="160" height="28" rx="4" fill="#1e293b"/>
+      <text x="80" y="18" fill="#f8fafc" font-size="11" text-anchor="middle">💥 プレイヤー被ダメージ</text>
+    </g>
+    <g transform="translate(15, 115)">
+      <rect width="160" height="28" rx="4" fill="#1e293b"/>
+      <text x="80" y="18" fill="#f8fafc" font-size="11" text-anchor="middle">👁 敵索敵アラート発令</text>
+    </g>
+
+    <!-- Constant Buffer Structure -->
+    <rect x="15" y="155" width="160" height="68" rx="4" fill="#0b0f19" stroke="#00f0ff" stroke-width="1"/>
+    <text x="25" y="172" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10">struct PostFxData {</text>
+    <text x="32" y="187" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="9">float glitchIntensity;</text>
+    <text x="32" y="201" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="9">float blurRadius;</text>
+    <text x="25" y="215" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10">}; // 毎フレーム転送</text>
+  </g>
+
+  <!-- Transfer Flow -->
+  <g transform="translate(235, 180)">
+    <line x1="0" y1="0" x2="55" y2="0" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6,4"/>
+    <polygon points="55,-6 67,0 55,6" fill="#00f0ff"/>
+    <text x="30" y="-12" fill="#38bdf8" font-size="10" font-family="'JetBrains Mono', monospace" text-anchor="middle">Map / Update</text>
+    <text x="30" y="22" fill="#94a3b8" font-size="9" text-anchor="middle">ConstantBuffer</text>
+  </g>
+
+  <!-- Right: 15+ Custom Shaders & Output -->
+  <g transform="translate(315, 85)">
+    <rect width="350" height="240" rx="8" fill="#111c30" stroke="#a855f7" stroke-width="1.5"/>
+    <rect width="350" height="34" rx="8" fill="#7e22ce" fill-opacity="0.3"/>
+    <text x="175" y="22" fill="#d8b4fe" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">GPU : HLSL ポストプロセス パイプライン (15種+)</text>
+
+    <!-- Shader Grid Badges -->
+    <g transform="translate(15, 48)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="100" height="38" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+      <text x="50" y="18" fill="#c7d2fe" font-size="11" font-weight="bold" text-anchor="middle">Glitch Noise</text>
+      <text x="50" y="30" fill="#a5b4fc" font-size="9" text-anchor="middle">グリッチノイズ</text>
+
+      <rect x="110" y="0" width="100" height="38" rx="6" fill="#311042" stroke="#e879f9" stroke-width="1"/>
+      <text x="160" y="18" fill="#f5d0fe" font-size="11" font-weight="bold" text-anchor="middle">Radial Blur</text>
+      <text x="160" y="30" fill="#f0abfc" font-size="9" text-anchor="middle">放射状ブラー</text>
+
+      <rect x="220" y="0" width="100" height="38" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+      <text x="270" y="18" fill="#a7f3d0" font-size="11" font-weight="bold" text-anchor="middle">Depth Outline</text>
+      <text x="270" y="30" fill="#6ee7b7" font-size="9" text-anchor="middle">深度輪郭線</text>
+
+      <!-- Row 2 -->
+      <rect x="0" y="48" width="100" height="38" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+      <text x="50" y="66" fill="#e2e8f0" font-size="11" font-weight="bold" text-anchor="middle">Chromatic Aberr.</text>
+      <text x="50" y="78" fill="#94a3b8" font-size="9" text-anchor="middle">色収差</text>
+
+      <rect x="110" y="48" width="100" height="38" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+      <text x="160" y="66" fill="#e2e8f0" font-size="11" font-weight="bold" text-anchor="middle">Vignette Flare</text>
+      <text x="160" y="78" fill="#94a3b8" font-size="9" text-anchor="middle">周辺減光・閃光</text>
+
+      <rect x="220" y="48" width="100" height="38" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+      <text x="270" y="66" fill="#e2e8f0" font-size="11" font-weight="bold" text-anchor="middle">Dual Bloom</text>
+      <text x="270" y="78" fill="#94a3b8" font-size="9" text-anchor="middle">高輝度グロー</text>
+    </g>
+
+    <!-- Bottom Description -->
+    <rect x="15" y="150" width="320" height="70" rx="6" fill="#0c1220" stroke="#334155" stroke-width="1"/>
+    <text x="25" y="172" fill="#38bdf8" font-size="11" font-weight="bold">✨ 演出の滑らかなイージング遷移</text>
+    <text x="25" y="190" fill="#cbd5e1" font-size="10">エフェクトのON/OFFだけでなく、パラメータを毎フレーム補間。</text>
+    <text x="25" y="206" fill="#cbd5e1" font-size="10">プレイヤーが違和感なく没入できるダイナミックな画面効果を両立。</text>
+  </g>
+</svg>

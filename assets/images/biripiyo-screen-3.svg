@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <!-- Result Screen matching slide 11 right -->
+  <rect width="600" height="360" fill="#120e18"/>
+  <!-- Castle Archway -->
+  <g fill="#241e30" stroke="#0a080e" stroke-width="2">
+    <rect x="80" y="40" width="440" height="280"/>
+  </g>
+  <!-- Red Clear Banner -->
+  <text x="300" y="80" fill="#ef4444" font-size="28" font-family="'Outfit', sans-serif" font-weight="900" text-anchor="middle">クリア！</text>
+  <!-- Huge Digital Timer Display (00:53.20) -->
+  <rect x="130" y="95" width="340" height="65" rx="8" fill="#000" stroke="#38bdf8" stroke-width="2"/>
+  <text x="300" y="145" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="44" font-weight="900" letter-spacing="4" text-anchor="middle">
+    00:53.20
+  </text>
+  <!-- Ranking List -->
+  <g transform="translate(180, 180)" font-family="'JetBrains Mono', monospace" font-size="14">
+    <text x="0" y="15" fill="#facc15">1位 : 00:53.20 (New Record!)</text>
+    <text x="0" y="38" fill="#94a3b8">2位 : 01:13.00</text>
+    <text x="0" y="61" fill="#94a3b8">3位 : 01:33.00</text>
+  </g>
+  <!-- Navigation Buttons (リスタート / タイトルへ) -->
+  <g transform="translate(140, 265)">
+    <rect width="140" height="34" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="70" y="23" fill="#38bdf8" font-size="14" font-family="'Outfit', sans-serif" font-weight="bold" text-anchor="middle">リスタート</text>
+  </g>
+  <g transform="translate(320, 265)">
+    <rect width="140" height="34" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="70" y="23" fill="#cbd5e1" font-size="14" font-family="'Outfit', sans-serif" font-weight="bold" text-anchor="middle">タイトルへ</text>
+  </g>
+  <rect x="20" y="325" width="180" height="22" rx="4" fill="#0f172a" fill-opacity="0.8"/>
+  <text x="110" y="340" fill="#fff" font-size="11" font-family="sans-serif" text-anchor="middle">リザルト画面 (Result Screen)</text>
+</svg>

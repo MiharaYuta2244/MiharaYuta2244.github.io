@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" width="100%" height="100%">
+  <defs>
+    <radialGradient id="vCone" cx="0%" cy="50%" r="90%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#dc2626" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#991b1b" stop-opacity="0.05"/>
+    </radialGradient>
+    <linearGradient id="wallBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="360" rx="12" fill="#0b0f17" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="350" y="38" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">
+    正確な視界コーンの動的生成（レイキャスト × メッシュ制御）
+  </text>
+  <text x="350" y="58" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">
+    放射状レイキャストで壁・障害物との交差点を検出し、頂点バッファをリアルタイム再構築
+  </text>
+
+  <!-- Left: Visual Simulation Diagram -->
+  <g transform="translate(40, 85)">
+    <!-- Arena Box -->
+    <rect width="320" height="240" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Obstacle Wall -->
+    <rect x="150" y="40" width="45" height="110" rx="4" fill="url(#wallBg)" stroke="#64748b" stroke-width="1.5"/>
+    <text x="172" y="98" fill="#94a3b8" font-size="11" text-anchor="middle" font-weight="bold">壁 (遮蔽物)</text>
+
+    <!-- Enemy Source -->
+    <circle cx="50" cy="120" r="14" fill="#334155" stroke="#ef4444" stroke-width="2.5"/>
+    <circle cx="50" cy="120" r="5" fill="#ef4444"/>
+    <text x="50" y="152" fill="#fca5a5" font-size="11" text-anchor="middle" font-weight="bold">敵 (Origin)</text>
+
+    <!-- Dynamic Polygon Mesh drawn between rays -->
+    <!-- The mesh clips cleanly at the obstacle -->
+    <path d="M 50 120 L 280 40 L 150 40 L 150 150 L 280 200 Z" fill="url(#vCone)"/>
+
+    <!-- Raycast Lines -->
+    <!-- Unblocked Ray (Top) -->
+    <line x1="50" y1="120" x2="280" y2="40" stroke="#f87171" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <circle cx="280" cy="40" r="4" fill="#22c55e"/> <!-- Max range point -->
+
+    <!-- Ray Hit Wall Top -->
+    <line x1="50" y1="120" x2="150" y2="70" stroke="#f87171" stroke-width="1.5"/>
+    <circle cx="150" cy="70" r="4" fill="#ef4444"/> <!-- Collision Hit Point -->
+
+    <!-- Ray Hit Wall Mid -->
+    <line x1="50" y1="120" x2="150" y2="120" stroke="#f87171" stroke-width="1.5"/>
+    <circle cx="150" cy="120" r="4" fill="#ef4444"/>
+
+    <!-- Ray Hit Wall Corner -->
+    <line x1="50" y1="120" x2="150" y2="150" stroke="#f87171" stroke-width="1.5"/>
+    <circle cx="150" cy="150" r="4" fill="#ef4444"/>
+
+    <!-- Unblocked Ray (Bottom) -->
+    <line x1="50" y1="120" x2="280" y2="200" stroke="#f87171" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <circle cx="280" cy="200" r="4" fill="#22c55e"/>
+
+    <!-- Legend -->
+    <rect x="10" y="195" width="300" height="36" rx="4" fill="#1e293b" fill-opacity="0.8"/>
+    <circle cx="25" cy="213" r="4" fill="#ef4444"/>
+    <text x="35" y="217" fill="#cbd5e1" font-size="10">衝突点 (Hit point)</text>
+    <circle cx="140" cy="213" r="4" fill="#22c55e"/>
+    <text x="150" y="217" fill="#cbd5e1" font-size="10">最大射程 (Max range)</text>
+  </g>
+
+  <!-- Right: Pipeline Explanation -->
+  <g transform="translate(390, 85)">
+    <rect width="270" height="240" rx="8" fill="#111c30" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="270" height="34" rx="8" fill="#0369a1" fill-opacity="0.3"/>
+    <text x="135" y="22" fill="#7dd3fc" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">実装アルゴリズムの流れ</text>
+
+    <g transform="translate(15, 48)">
+      <!-- Step 1 -->
+      <circle cx="12" cy="12" r="10" fill="#0284c7"/>
+      <text x="12" y="16" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">1</text>
+      <text x="30" y="12" fill="#f8fafc" font-size="11" font-weight="bold">放射状レイキャスト</text>
+      <text x="30" y="26" fill="#94a3b8" font-size="10">索敵角（例: 90度）をN分割し光線を射出</text>
+
+      <!-- Step 2 -->
+      <circle cx="12" cy="54" r="10" fill="#0284c7"/>
+      <text x="12" y="58" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">2</text>
+      <text x="30" y="54" fill="#f8fafc" font-size="11" font-weight="bold">交差判定 &amp; 頂点抽出</text>
+      <text x="30" y="68" fill="#94a3b8" font-size="10">遮蔽物衝突座標、角の最適化補間</text>
+
+      <!-- Step 3 -->
+      <circle cx="12" cy="96" r="10" fill="#0284c7"/>
+      <text x="12" y="100" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">3</text>
+      <text x="30" y="96" fill="#f8fafc" font-size="11" font-weight="bold">動的頂点バッファ構築</text>
+      <text x="30" y="110" fill="#94a3b8" font-size="10">Triangle Fanとしてインデックスを生成</text>
+
+      <!-- Step 4 -->
+      <circle cx="12" cy="138" r="10" fill="#10b981"/>
+      <text x="12" y="142" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">4</text>
+      <text x="30" y="138" fill="#34d399" font-size="11" font-weight="bold">DirectX 12 描画</text>
+      <text x="30" y="152" fill="#94a3b8" font-size="10">加算/アルファ合成で視界ポリゴンをレンダリング</text>
+    </g>
+
+    <!-- Bottom note -->
+    <rect x="15" y="210" width="240" height="20" rx="3" fill="#1e293b"/>
+    <text x="135" y="224" fill="#38bdf8" font-size="10" text-anchor="middle" font-weight="bold">壁抜け・突き抜けを100%防止</text>
+  </g>
+</svg>

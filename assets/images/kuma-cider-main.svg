@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="kumaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="60%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <radialGradient id="bubbleGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#kumaBg)"/>
+
+  <!-- Fizzing bubbles -->
+  <circle cx="80" cy="280" r="14" fill="url(#bubbleGrad)"/>
+  <circle cx="120" cy="180" r="22" fill="url(#bubbleGrad)"/>
+  <circle cx="480" cy="100" r="18" fill="url(#bubbleGrad)"/>
+  <circle cx="520" cy="240" r="28" fill="url(#bubbleGrad)"/>
+  <circle cx="430" cy="290" r="12" fill="url(#bubbleGrad)"/>
+
+  <!-- Soda Bottle -->
+  <g transform="translate(420, 90)">
+    <path d="M 20 0 L 40 0 L 40 30 Q 60 50 60 120 L 60 210 Q 60 230 40 230 L 20 230 Q 0 230 0 210 L 0 120 Q 0 50 20 30 Z" fill="#e0f2fe" fill-opacity="0.85" stroke="#fff" stroke-width="3"/>
+    <!-- Liquid -->
+    <path d="M 5 110 Q 30 100 55 110 L 55 210 Q 55 225 35 225 L 25 225 Q 5 225 5 210 Z" fill="#38bdf8" fill-opacity="0.7"/>
+    <!-- Bottle Cap -->
+    <rect x="22" y="-12" width="16" height="12" rx="2" fill="#0284c7"/>
+  </g>
+
+  <!-- Cute Bear Character (White Bear) -->
+  <g transform="translate(250, 140)">
+    <!-- Body -->
+    <ellipse cx="60" cy="110" rx="42" ry="50" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+    <!-- Belly -->
+    <ellipse cx="60" cy="115" rx="28" ry="34" fill="#f8fafc"/>
+    <!-- Head -->
+    <circle cx="60" cy="45" r="38" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+    <!-- Ears -->
+    <circle cx="30" cy="18" r="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+    <circle cx="30" cy="18" r="8" fill="#fbcfe8"/>
+    <circle cx="90" cy="18" r="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+    <circle cx="90" cy="18" r="8" fill="#fbcfe8"/>
+    <!-- Eyes -->
+    <ellipse cx="46" cy="40" rx="4" ry="6" fill="#1e293b"/>
+    <ellipse cx="74" cy="40" rx="4" ry="6" fill="#1e293b"/>
+    <!-- Snout & Nose -->
+    <ellipse cx="60" cy="52" rx="14" ry="10" fill="#f1f5f9"/>
+    <ellipse cx="60" cy="48" rx="5" ry="3.5" fill="#0f172a"/>
+    <path d="M 55 55 Q 60 59 65 55" stroke="#0f172a" stroke-width="2" fill="none"/>
+    <!-- Cheeks -->
+    <circle cx="38" cy="48" r="6" fill="#f43f5e" fill-opacity="0.4"/>
+    <circle cx="82" cy="48" r="6" fill="#f43f5e" fill-opacity="0.4"/>
+    <!-- Holding Candies -->
+    <circle cx="15" cy="100" r="12" fill="#f43f5e" stroke="#fff" stroke-width="2"/>
+    <circle cx="105" cy="95" r="10" fill="#facc15" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- Title Text Banner -->
+  <g transform="translate(40, 50)">
+    <text x="0" y="32" fill="#fef08a" font-family="'Outfit', sans-serif" font-size="28" font-weight="900" filter="drop-shadow(2px 3px 0px #0369a1)">
+      おかしあつめて
+    </text>
+    <text x="0" y="75" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="44" font-weight="900" filter="drop-shadow(3px 4px 0px #0369a1)">
+      クマサイダー
+    </text>
+  </g>
+
+  <!-- Role Badge -->
+  <g transform="translate(40, 270)">
+    <rect width="170" height="34" rx="17" fill="#0f172a" fill-opacity="0.75" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="85" y="22" fill="#7dd3fc" font-size="12" font-family="'Outfit', sans-serif" font-weight="bold" text-anchor="middle">担当: インゲーム実装</text>
+  </g>
+</svg>

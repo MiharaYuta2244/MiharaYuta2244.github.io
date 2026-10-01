@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <rect width="600" height="360" fill="#0b0e14"/>
+  <!-- Arena floor with massive batched decals -->
+  <g id="decal-field">
+    <path d="M 120 180 Q 80 140 100 220 Q 140 240 180 200 Z" fill="#991b1b" opacity="0.85"/>
+    <path d="M 280 140 Q 320 90 380 130 Q 360 190 310 180 Z" fill="#b91c1c" opacity="0.8"/>
+    <path d="M 440 210 Q 500 170 530 240 Q 480 280 430 250 Z" fill="#7f1d1d" opacity="0.75"/>
+    <circle cx="150" cy="130" r="12" fill="#991b1b" opacity="0.7"/>
+    <circle cx="340" cy="220" r="14" fill="#991b1b" opacity="0.7"/>
+    <circle cx="410" cy="110" r="9" fill="#991b1b" opacity="0.7"/>
+  </g>
+  <!-- Player Mid-Action -->
+  <circle cx="300" cy="180" r="22" fill="#ea580c" stroke="#fb923c" stroke-width="2.5"/>
+  <circle cx="300" cy="176" r="11" fill="#fed7aa"/>
+  <!-- Punch Trail -->
+  <path d="M 315 165 Q 360 170 380 190" stroke="#00f0ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <!-- Action Prompt (RT: パンチ) -->
+  <rect x="220" y="270" width="160" height="46" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="300" y="300" fill="#f8fafc" font-size="20" font-family="'Outfit', sans-serif" font-weight="900" text-anchor="middle">
+    <tspan fill="#38bdf8">RT : </tspan>パンチ
+  </text>
+  <text x="30" y="336" fill="#94a3b8" font-size="11" font-family="'Outfit', sans-serif">DirectX 12 Decal Instancing &amp; Input HUD</text>
+</svg>

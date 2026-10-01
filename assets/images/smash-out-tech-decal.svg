@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boxBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="360" rx="12" fill="#0b0f17" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Title Banner -->
+  <text x="350" y="38" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">
+    DirectX 12 : テクスチャ別動的バッチング（デカール描画）アーキテクチャ
+  </text>
+  <text x="350" y="58" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">
+    連想配列を用いたテクスチャ別自動グループ化 ＆ 専用SRV・インスタンスバッファ割当
+  </text>
+
+  <!-- Step 1: Input Decals -->
+  <g transform="translate(30, 90)">
+    <rect width="180" height="230" rx="8" fill="url(#boxBg1)" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="34" rx="8" fill="#1e293b"/>
+    <text x="90" y="22" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle">1. デカール発生要求</text>
+    
+    <!-- Decal Items -->
+    <rect x="15" y="50" width="150" height="38" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="25" y="68" fill="#f87171" font-size="11" font-family="sans-serif" font-weight="bold">Blood Splatter A</text>
+    <text x="25" y="82" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">TextureID: 0x01 (血痕)</text>
+
+    <rect x="15" y="96" width="150" height="38" rx="6" fill="#0f172a" stroke="#eab308" stroke-width="1.5"/>
+    <text x="25" y="114" fill="#fde047" font-size="11" font-family="sans-serif" font-weight="bold">Ground Crack B</text>
+    <text x="25" y="128" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">TextureID: 0x02 (ひび割れ)</text>
+
+    <rect x="15" y="142" width="150" height="38" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="25" y="160" fill="#f87171" font-size="11" font-family="sans-serif" font-weight="bold">Blood Splatter A</text>
+    <text x="25" y="174" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">TextureID: 0x01 (血痕)</text>
+
+    <text x="90" y="210" fill="#64748b" font-size="11" text-anchor="middle">毎フレーム動的に発生</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 220 200 L 255 200" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <polygon points="255,195 265,200 255,205" fill="#00f0ff"/>
+
+  <!-- Step 2: Associative Map Grouping -->
+  <g transform="translate(265, 90)">
+    <rect width="200" height="230" rx="8" fill="url(#boxBg1)" stroke="#0284c7" stroke-width="2"/>
+    <rect width="200" height="34" rx="8" fill="#0369a1" fill-opacity="0.4"/>
+    <text x="100" y="22" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle">2. 連想配列グループ化</text>
+    
+    <text x="15" y="55" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">std::unordered_map&lt;TexID, Group&gt;</text>
+
+    <!-- Group 1 -->
+    <rect x="12" y="65" width="176" height="65" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    <text x="20" y="83" fill="#fca5a5" font-size="11" font-weight="bold">Group [0x01] : 2件</text>
+    <text x="20" y="100" fill="#94a3b8" font-size="10">・InstanceData[0]: WVP, Alpha</text>
+    <text x="20" y="116" fill="#94a3b8" font-size="10">・InstanceData[1]: WVP, Alpha</text>
+
+    <!-- Group 2 -->
+    <rect x="12" y="138" width="176" height="65" rx="6" fill="#1e293b" stroke="#eab308" stroke-width="1"/>
+    <text x="20" y="156" fill="#fef08a" font-size="11" font-weight="bold">Group [0x02] : 1件</text>
+    <text x="20" y="173" fill="#94a3b8" font-size="10">・InstanceData[0]: WVP, Alpha</text>
+
+    <text x="100" y="220" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">自動グルーピング処理</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 475 200 L 505 200" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <polygon points="505,195 515,200 505,205" fill="#00f0ff"/>
+
+  <!-- Step 3: DirectX 12 Draw Calls -->
+  <g transform="translate(515, 90)">
+    <rect width="160" height="230" rx="8" fill="url(#boxBg1)" stroke="#10b981" stroke-width="2"/>
+    <rect width="160" height="34" rx="8" fill="#065f46" fill-opacity="0.4"/>
+    <text x="80" y="22" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle">3. GPU描画 (DX12)</text>
+
+    <!-- Pipeline steps -->
+    <rect x="10" y="50" width="140" height="36" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+    <text x="70" y="65" fill="#a7f3d0" font-size="10" font-family="'JetBrains Mono', monospace" text-anchor="middle">SetGraphicsRoot</text>
+    <text x="70" y="78" fill="#6ee7b7" font-size="9" font-family="'JetBrains Mono', monospace" text-anchor="middle">DescriptorTable (SRV)</text>
+
+    <rect x="10" y="94" width="140" height="36" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+    <text x="70" y="109" fill="#a7f3d0" font-size="10" font-family="'JetBrains Mono', monospace" text-anchor="middle">DrawIndexedInstanced</text>
+    <text x="70" y="122" fill="#6ee7b7" font-size="9" font-family="'JetBrains Mono', monospace" text-anchor="middle">(Group 0x01: 2個一括)</text>
+
+    <line x1="20" y1="142" x2="140" y2="142" stroke="#334155" stroke-width="1"/>
+
+    <text x="80" y="165" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">ステート切り替え激減</text>
+    <text x="80" y="185" fill="#e2e8f0" font-size="10" text-anchor="middle">ドローコール最小化</text>
+    <text x="80" y="202" fill="#34d399" font-size="11" font-family="'JetBrains Mono', monospace" font-weight="bold" text-anchor="middle">60FPS+ 維持</text>
+  </g>
+</svg>

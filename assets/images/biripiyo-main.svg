@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <!-- Pixel art feel / dark brick dungeon gradient -->
+    <linearGradient id="piyoBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b2e"/>
+      <stop offset="100%" stop-color="#0f0c1b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#piyoBg)"/>
+
+  <!-- Brick Castle Wall Pattern -->
+  <g fill="#2d2845" stroke="#171424" stroke-width="2">
+    <rect x="20" y="40" width="70" height="30"/>
+    <rect x="100" y="40" width="70" height="30"/>
+    <rect x="180" y="40" width="70" height="30"/>
+    <rect x="260" y="40" width="70" height="30"/>
+    <rect x="340" y="40" width="70" height="30"/>
+    <rect x="420" y="40" width="70" height="30"/>
+    <rect x="500" y="40" width="70" height="30"/>
+    
+    <rect x="55" y="75" width="70" height="30"/>
+    <rect x="135" y="75" width="70" height="30"/>
+    <rect x="215" y="75" width="70" height="30"/>
+    <rect x="295" y="75" width="70" height="30"/>
+    <rect x="375" y="75" width="70" height="30"/>
+    <rect x="455" y="75" width="70" height="30"/>
+  </g>
+
+  <!-- Gothic Arch Windows with Blue Backlight -->
+  <path d="M 120 160 Q 150 110 180 160 L 180 260 L 120 260 Z" fill="#2563eb" fill-opacity="0.3" stroke="#60a5fa" stroke-width="2"/>
+  <path d="M 420 160 Q 450 110 480 160 L 480 260 L 420 260 Z" fill="#2563eb" fill-opacity="0.3" stroke="#60a5fa" stroke-width="2"/>
+
+  <!-- Electric Spark Lines across arena (ビリビリ) -->
+  <path d="M 60 180 L 160 170 L 220 190 L 320 165 L 420 195 L 540 175" fill="none" stroke="#facc15" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="220" cy="190" r="6" fill="#fef08a"/>
+  <circle cx="320" cy="165" r="7" fill="#fef08a"/>
+
+  <!-- Pixel Chick Hero (Yellow Piyo) -->
+  <g transform="translate(260, 190)">
+    <!-- Yellow round body -->
+    <rect x="0" y="10" width="60" height="50" rx="16" fill="#facc15" stroke="#ca8a04" stroke-width="3"/>
+    <!-- Cute Red Crest -->
+    <rect x="22" y="-4" width="16" height="16" rx="4" fill="#ef4444"/>
+    <!-- Big Pixel Eyes -->
+    <rect x="12" y="24" width="10" height="14" rx="2" fill="#0f172a"/>
+    <rect x="14" y="26" width="4" height="4" fill="#fff"/>
+    <rect x="38" y="24" width="10" height="14" rx="2" fill="#0f172a"/>
+    <rect x="40" y="26" width="4" height="4" fill="#fff"/>
+    <!-- Orange Beak -->
+    <polygon points="25,38 35,38 30,48" fill="#f97316"/>
+    <!-- Wings -->
+    <rect x="-8" y="26" width="12" height="16" rx="4" fill="#eab308"/>
+    <rect x="56" y="26" width="12" height="16" rx="4" fill="#eab308"/>
+    <!-- Feet -->
+    <rect x="12" y="60" width="12" height="8" rx="2" fill="#f97316"/>
+    <rect x="36" y="60" width="12" height="8" rx="2" fill="#f97316"/>
+  </g>
+
+  <!-- Title Badge (Slide 11 style) -->
+  <g transform="translate(60, 45)">
+    <text x="0" y="40" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="38" font-weight="900" filter="drop-shadow(3px 3px 0px #0284c7)">
+      ビリピヨランブル !!
+    </text>
+  </g>
+
+  <!-- Role Badge -->
+  <g transform="translate(60, 290)">
+    <rect width="180" height="34" rx="17" fill="#0f172a" fill-opacity="0.85" stroke="#facc15" stroke-width="1.5"/>
+    <text x="90" y="22" fill="#fef08a" font-size="12" font-family="'Outfit', sans-serif" font-weight="bold" text-anchor="middle">担当: UIプログラマー</text>
+  </g>
+</svg>

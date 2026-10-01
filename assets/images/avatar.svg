@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <rect width="240" height="240" rx="36" fill="url(#avatarBg)"/>
+  
+  <!-- Circuit Pattern Background -->
+  <path d="M20 50 H70 L90 70 H150 L170 50 H220" stroke="#38bdf8" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+  <path d="M30 190 H80 L100 170 H140 L160 190 H210" stroke="#38bdf8" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+  <circle cx="90" cy="70" r="3" fill="#00f0ff" opacity="0.4"/>
+  <circle cx="170" cy="50" r="3" fill="#00f0ff" opacity="0.4"/>
+
+  <!-- Developer Silhouette / Illustration -->
+  <!-- Clothes -->
+  <path d="M60 220 Q120 180 180 220" fill="#1e3a8a" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M85 220 L95 190 L120 205 L145 190 L155 220 Z" fill="#0f172a"/>
+  
+  <!-- Neck -->
+  <rect x="106" y="145" width="28" height="30" rx="4" fill="#fed7aa"/>
+  
+  <!-- Head -->
+  <ellipse cx="120" cy="115" rx="42" ry="48" fill="#ffedd5"/>
+  
+  <!-- Hair -->
+  <path d="M76 110 C74 70 95 55 120 55 C145 55 166 70 164 110 C155 85 140 82 120 84 C100 82 85 85 76 110 Z" fill="#1e293b"/>
+  <path d="M74 110 C70 125 78 140 82 145 C80 130 82 115 88 105 Z" fill="#1e293b"/>
+  <path d="M166 110 C170 125 162 140 158 145 C160 130 158 115 152 105 Z" fill="#1e293b"/>
+
+  <!-- Glasses -->
+  <rect x="88" y="105" width="26" height="18" rx="4" fill="none" stroke="#0f172a" stroke-width="3"/>
+  <rect x="126" y="105" width="26" height="18" rx="4" fill="none" stroke="#0f172a" stroke-width="3"/>
+  <line x1="114" y1="112" x2="126" y2="112" stroke="#0f172a" stroke-width="3"/>
+  <line x1="78" y1="110" x2="88" y2="112" stroke="#0f172a" stroke-width="3"/>
+  <line x1="152" y1="112" x2="162" y2="110" stroke="#0f172a" stroke-width="3"/>
+
+  <!-- Glasses shine -->
+  <line x1="91" y1="118" x2="99" y2="110" stroke="#38bdf8" stroke-width="2" opacity="0.8"/>
+  <line x1="129" y1="118" x2="137" y2="110" stroke="#38bdf8" stroke-width="2" opacity="0.8"/>
+
+  <!-- Eyes & Smile -->
+  <circle cx="101" cy="114" r="3" fill="#1e293b"/>
+  <circle cx="139" cy="114" r="3" fill="#1e293b"/>
+  <path d="M108 138 Q120 148 132 138" stroke="#ea580c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Badge / Gamer Accent -->
+  <rect x="25" y="25" width="60" height="22" rx="11" fill="#0369a1" opacity="0.85"/>
+  <text x="55" y="39" fill="#e0f2fe" font-size="10" font-family="'Outfit', sans-serif" font-weight="bold" text-anchor="middle">DX12 / C++</text>
+  
+  <rect x="160" y="195" width="65" height="24" rx="12" fill="#0f172a" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="192" y="211" fill="#00f0ff" font-size="10" font-family="'Outfit', sans-serif" font-weight="bold" text-anchor="middle">PROGRAMMER</text>
+</svg>
