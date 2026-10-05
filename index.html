@@ -11,8 +11,6 @@
   <header class="site-header">
     <a class="logo" href="#">YUTA MIHARA</a>
     <nav class="nav" aria-label="メインナビゲーション">
-      <a href="#about">ABOUT</a>
-      <a href="#works">WORKS</a>
     </nav>
   </header>
 
@@ -27,7 +25,7 @@
 
     <section class="intro-grid" id="about">
       <article class="profile-card panel">
-        <div class="section-label">01 / ABOUT</div>
+        <div class="section-label">01</div>
         <div class="profile-main">
           <div class="profile-image-wrap">
             <img src="assets/profile.jpg" alt="ミハラ ユウタのプロフィール写真">
@@ -69,15 +67,17 @@
       </article>
 
       <article class="game-card panel" id="works">
-        <div class="section-label">02 / CURRENT WORK</div>
+        <div class="section-label">02 / CURRENT PROJECT</div>
         <div class="game-heading">
           <p class="game-kicker">JOB HUNTING PROJECT</p>
           <h2>SMASH OUT</h2>
-          <p class="game-meta">3D 見下ろしアクション　/　DirectX 12　/　2026.04 -</p>
+          <p class="game-meta">3D 見下ろしアクション / DirectX 12 / 2026.04 -</p>
         </div>
 
-        <figure class="game-image">
-          <img src="assets/smash-out.jpg" alt="SMASH OUTのゲーム画面">
+        <figure class="game-image work-gif">
+          <img src="assets/smash-out.gif" alt="SMASH OUTのゲームプレイ"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div class="gif-placeholder" style="display:none;">SMASH OUT / GIF</div>
         </figure>
 
         <div class="game-description">
@@ -97,8 +97,8 @@
     
     <section class="past-works" id="works">
       <div class="past-works-heading">
-        <div class="section-label">03 / PAST WORKS</div>
-        <h2>PAST <span>WORKS</span></h2>
+        <div class="section-label">03</div>
+        <h2>PAST <span>PROJECTS</span></h2>
         <p>2024 - 2026 / INDIVIDUAL & TEAM PROJECTS</p>
       </div>
 
