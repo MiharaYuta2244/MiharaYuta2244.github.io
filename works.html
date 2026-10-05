@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ミハラ ユウタ - Past Works">
+  <title>Past Works | YUTA MIHARA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .works-page {
+      padding: 90px 0 120px;
+    }
+
+    .page-heading {
+      padding-bottom: 55px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-heading h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(52px, 9vw, 108px);
+      line-height: .9;
+      letter-spacing: -.055em;
+    }
+
+    .page-heading h1 span {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--text);
+    }
+
+    .page-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      padding-top: 55px;
+    }
+
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .work-gif {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #050505;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .work-gif img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gif-placeholder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: #555;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    .work-content {
+      padding: 26px 28px 30px;
+    }
+
+    .work-number {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+
+    .work-content h2 {
+      margin: 0 0 22px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .work-meta {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      margin: 0;
+      border-top: 1px solid #252525;
+    }
+
+    .work-meta div {
+      display: contents;
+    }
+
+    .work-meta dt,
+    .work-meta dd {
+      margin: 0;
+      padding: 11px 0;
+      border-bottom: 1px solid #252525;
+      font-size: 12px;
+    }
+
+    .work-meta dt {
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .work-meta dd {
+      color: #ddd;
+      font-weight: 500;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-top: 55px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      transition: color .2s ease, padding .2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+      padding-left: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .works-page {
+        padding: 65px 0 80px;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-content {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">YUTA MIHARA</a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a href="index.html#about">ABOUT</a>
+      <a href="works.html">WORKS</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="works-page">
+      <div class="page-heading">
+        <div class="section-label">03 / PAST WORKS</div>
+        <h1>PAST<br><span>WORKS</span></h1>
+        <p>2024 - 2026 / INDIVIDUAL & TEAM PROJECTS</p>
+      </div>
+
+      <div class="works-grid">
+        <!-- 作品1：GIFを assets/kuma-cider.gif に置いてください -->
+        <article class="work-card">
+          <figure class="work-gif">
+            <img src="assets/kuma-cider.gif" alt="おかしあつめてクマサイダーのゲームプレイ" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="gif-placeholder" style="display:none;">KUMA CIDER / GIF</div>
+          </figure>
+          <div class="work-content">
+            <div class="work-number">WORK 01</div>
+            <h2>おかしあつめて<br>クマサイダー</h2>
+            <dl class="work-meta">
+              <div><dt>ENGINE</dt><dd>要設定</dd></div>
+              <div><dt>GENRE</dt><dd>アクション</dd></div>
+              <div><dt>PERIOD</dt><dd>2ヶ月 / 3人</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- 作品2：GIFを assets/bilipiyo-rumble.gif に置いてください -->
+        <article class="work-card">
+          <figure class="work-gif">
+            <img src="assets/bilipiyo-rumble.gif" alt="ビリピヨランブル!!のゲームプレイ" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="gif-placeholder" style="display:none;">BILIPIYO RUMBLE / GIF</div>
+          </figure>
+          <div class="work-content">
+            <div class="work-number">WORK 02</div>
+            <h2>ビリピヨランブル !!</h2>
+            <dl class="work-meta">
+              <div><dt>ENGINE</dt><dd>要設定</dd></div>
+              <div><dt>GENRE</dt><dd>アクション</dd></div>
+              <div><dt>PERIOD</dt><dd>2ヶ月 / 3人</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- 作品3：GIFを assets/soutai-gasa.gif に置いてください -->
+        <article class="work-card">
+          <figure class="work-gif">
+            <img src="assets/soutai-gasa.gif" alt="相対傘のゲームプレイ" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="gif-placeholder" style="display:none;">SOUTAI GASA / GIF</div>
+          </figure>
+          <div class="work-content">
+            <div class="work-number">WORK 03</div>
+            <h2>相対傘</h2>
+            <dl class="work-meta">
+              <div><dt>ENGINE</dt><dd>要設定</dd></div>
+              <div><dt>GENRE</dt><dd>アクション</dd></div>
+              <div><dt>PERIOD</dt><dd>2ヶ月 / 3人</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- 作品4：新しい作品。情報が決まったらここを編集 -->
+        <article class="work-card">
+          <figure class="work-gif">
+            <img src="assets/new-work.gif" alt="新しく追加する作品のゲームプレイ" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="gif-placeholder" style="display:none;">NEW WORK / GIF</div>
+          </figure>
+          <div class="work-content">
+            <div class="work-number">WORK 04</div>
+            <h2>NEW WORK</h2>
+            <dl class="work-meta">
+              <div><dt>ENGINE</dt><dd>要設定</dd></div>
+              <div><dt>GENRE</dt><dd>要設定</dd></div>
+              <div><dt>PERIOD</dt><dd>要設定</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <a class="back-link" href="index.html">← BACK TO TOP</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 YUTA MIHARA</p>
+  </footer>
+</body>
+</html>
