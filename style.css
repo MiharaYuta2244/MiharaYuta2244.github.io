@@ -314,6 +314,137 @@ footer {
   letter-spacing: 0.1em;
 }
 
+/* Past works - single page section */
+.past-works {
+  padding: 30px 0 100px;
+}
+
+.past-works-heading {
+  padding: 0 0 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.past-works-heading h2 {
+  margin: 16px 0 12px;
+  font-size: clamp(44px, 7vw, 86px);
+  line-height: .9;
+  letter-spacing: -.055em;
+}
+
+.past-works-heading h2 span {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text);
+}
+
+.past-works-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding-top: 42px;
+}
+
+.work-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.work-gif {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  background: #050505;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.work-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gif-placeholder {
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #555;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.work-content {
+  padding: 25px 28px 29px;
+}
+
+.work-number {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.work-content h3 {
+  margin: 0 0 21px;
+  font-size: clamp(22px, 3vw, 31px);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+
+.work-meta {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  margin: 0;
+  border-top: 1px solid #252525;
+}
+
+.work-meta div {
+  display: contents;
+}
+
+.work-meta dt,
+.work-meta dd {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #252525;
+  font-size: 11px;
+}
+
+.work-meta dt {
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.work-meta dd {
+  color: #ddd;
+}
+
+@media (max-width: 900px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .past-works {
+    padding-bottom: 70px;
+  }
+
+  .work-content {
+    padding: 22px;
+  }
+}
+
 @media (max-width: 900px) {
   .intro-grid {
     grid-template-columns: 1fr;
