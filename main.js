@@ -1,5 +1,5 @@
 /**
- * ポートフォリオ作品データおよび個別紹介ビュー制御スクリプト
+ * ポートフォリオ作品データおよび画面切り替え制御スクリプト
  * 
  * 各作品の動画URL、GitHub URL、紹介コメント等は以下の `worksData` を編集することで簡単に変更できます。
  */
@@ -133,67 +133,91 @@ const worksData = {
   }
 };
 
+// 作品の表示順序（前後ナビゲーション用）
+const workOrder = ["smash-out", "kuma-cider", "bilypiyo-rumble", "soutai-gasa", "maou"];
+
 // =============================================================================
-// モーダル（個別紹介ビュー）の制御ロジック
+// フルスクリーン画面切り替え制御ロジック
 // =============================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("work-modal");
-  const modalBody = document.getElementById("modal-body");
-  const modalCategory = document.getElementById("modal-category");
-  const modalBreadcrumbTitle = document.getElementById("modal-breadcrumb-title");
-  const closeBtn = document.getElementById("modal-close");
-  const backdrop = document.getElementById("modal-backdrop");
-  const breadcrumbTop = document.getElementById("breadcrumb-top");
+  const homeView = document.getElementById("home-view");
+  const detailView = document.getElementById("detail-view");
+  const detailContent = document.getElementById("detail-content");
+  const breadcrumbCat = document.getElementById("detail-breadcrumb-category");
+  const breadcrumbTitle = document.getElementById("detail-breadcrumb-title");
 
-  if (!modal || !modalBody) return;
+  if (!homeView || !detailView || !detailContent) return;
 
-  // モーダルを開く関数
-  function openWorkModal(workId) {
-    const data = worksData[workId];
-    if (!data) return;
+  let savedScrollY = 0;
 
-    // パンくずリスト更新
-    if (modalCategory) modalCategory.textContent = data.category;
-    if (modalBreadcrumbTitle) modalBreadcrumbTitle.textContent = data.title;
-
-    // 詳細コンテンツのHTMLを生成
-    modalBody.innerHTML = renderWorkDetail(data);
-
-    // モーダルを表示
-    modal.classList.add("is-active");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-
-    // URLハッシュを更新（履歴に追加）
-    if (window.location.hash !== `#work-${workId}`) {
-      history.pushState(null, "", `#work-${workId}`);
+  // トップ画面を表示する関数
+  function showHomeView(updateHistory = true) {
+    if (detailContent) {
+      detailContent.innerHTML = ""; // 動画プレイヤーの停止
     }
 
-    // モーダルのスクロールをトップへ
-    const modalContainer = modal.querySelector(".modal-container");
-    if (modalContainer) {
-      modalContainer.scrollTop = 0;
-    }
-  }
+    detailView.style.display = "none";
+    detailView.classList.remove("is-active");
 
-  // モーダルを閉じる関数
-  function closeWorkModal(updateHistory = true) {
-    if (!modal.classList.contains("is-active")) return;
+    homeView.style.display = "block";
+    homeView.classList.add("is-active");
 
-    modal.classList.remove("is-active");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-
-    // モーダル内のiframe動画停止のため中身をクリア
-    setTimeout(() => {
-      if (!modal.classList.contains("is-active")) {
-        modalBody.innerHTML = "";
-      }
-    }, 300);
+    // スクロール位置を復元
+    window.scrollTo({ top: savedScrollY, behavior: "instant" });
 
     if (updateHistory && window.location.hash.startsWith("#work-")) {
       history.pushState(null, "", window.location.pathname + window.location.search);
     }
+  }
+
+  // 個別紹介画面を表示する関数（画面全体を切り替え）
+  function showDetailView(workId, updateHistory = true) {
+    const data = worksData[workId];
+    if (!data) return;
+
+    // トップ画面のスクロール位置を記憶（トップ画面が表示されていた場合のみ）
+    if (homeView.style.display !== "none") {
+      savedScrollY = window.scrollY || window.pageYOffset;
+    }
+
+    // パンくずリスト更新
+    if (breadcrumbCat) breadcrumbCat.textContent = data.category;
+    if (breadcrumbTitle) breadcrumbTitle.textContent = data.title;
+
+    // 詳細コンテンツのHTMLを生成
+    detailContent.innerHTML = renderWorkDetail(data);
+
+    // 画面全体をトップ画面から個別画面へ切り替え
+    homeView.style.display = "none";
+    homeView.classList.remove("is-active");
+
+    detailView.style.display = "block";
+    detailView.classList.add("is-active");
+
+    // 画面最上部へスクロール
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    // URLハッシュを更新
+    if (updateHistory && window.location.hash !== `#work-${workId}`) {
+      history.pushState(null, "", `#work-${workId}`);
+    }
+
+    // 新しく挿入された前後ナビゲーションのボタンにイベントを紐付け
+    detailContent.querySelectorAll("[data-nav-work-id]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const nextId = btn.getAttribute("data-nav-work-id");
+        if (nextId) showDetailView(nextId, true);
+      });
+    });
+
+    // 「一覧に戻る」ボタンの紐付け
+    detailContent.querySelectorAll(".back-to-home-trigger").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        showHomeView(true);
+      });
+    });
   }
 
   // 詳細ビューのHTML生成
@@ -201,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 動画セクションのレンダリング
     let mediaHtml = "";
     if (data.videoEmbedUrl) {
-      // 埋め込みプレイヤー
       mediaHtml = `
         <div class="detail-media-wrap">
           <div class="detail-video-container">
@@ -218,7 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
     } else {
-      // GIFプレビュー + 動画プレースホルダー枠
       mediaHtml = `
         <div class="detail-media-wrap">
           <figure class="detail-thumbnail">
@@ -265,8 +287,40 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
+    // 前後の作品
+    const currentIndex = workOrder.indexOf(data.id);
+    const prevId = currentIndex > 0 ? workOrder[currentIndex - 1] : null;
+    const nextId = currentIndex < workOrder.length - 1 ? workOrder[currentIndex + 1] : null;
+    const prevWork = prevId ? worksData[prevId] : null;
+    const nextWork = nextId ? worksData[nextId] : null;
+
+    let paginationHtml = "";
+    if (prevWork || nextWork) {
+      paginationHtml = `
+        <div class="detail-pagination">
+          ${prevWork ? `
+            <button type="button" class="pagination-link prev" data-nav-work-id="${escapeHtml(prevWork.id)}">
+              <span class="pagination-sub">← PREV WORK</span>
+              <span class="pagination-name">${escapeHtml(prevWork.title)}</span>
+            </button>
+          ` : `<div class="pagination-empty"></div>`}
+
+          <button type="button" class="pagination-center-btn back-to-home-trigger">
+            <span>一覧へ</span>
+          </button>
+
+          ${nextWork ? `
+            <button type="button" class="pagination-link next" data-nav-work-id="${escapeHtml(nextWork.id)}">
+              <span class="pagination-sub">NEXT WORK →</span>
+              <span class="pagination-name">${escapeHtml(nextWork.title)}</span>
+            </button>
+          ` : `<div class="pagination-empty"></div>`}
+        </div>
+      `;
+    }
+
     return `
-      <div class="detail-header-block">
+      <div class="detail-hero">
         <div class="detail-kicker">${escapeHtml(data.categoryLabel)}</div>
         <h1 class="detail-title">${escapeHtml(data.title)}</h1>
         <p class="detail-summary">${escapeHtml(data.summary)}</p>
@@ -322,11 +376,14 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </section>
 
-      <!-- 戻るアクション -->
+      <!-- 前後の作品ナビゲーション -->
+      ${paginationHtml}
+
+      <!-- ボトムアクション -->
       <div class="detail-footer-actions">
-        <button type="button" class="back-to-list-btn" onclick="document.getElementById('modal-close').click();">
+        <button type="button" class="back-to-home-btn back-to-home-trigger">
           <span aria-hidden="true">←</span>
-          <span>作品一覧に戻る</span>
+          <span>ポートフォリオ一覧に戻る</span>
         </button>
       </div>
     `;
@@ -366,14 +423,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 作品カードのクリックイベントリスナー登録
   document.querySelectorAll("[data-work-id]").forEach(card => {
     card.addEventListener("click", (e) => {
-      // 外部リンクなどの直接クリックは優先
-      if (e.target.closest("a") && !e.target.closest(".open-modal-trigger")) {
-        // カード全体のクリックとして処理したい場合はリンクのデフォルトを防ぐ
-      }
       const workId = card.getAttribute("data-work-id");
       if (workId) {
         e.preventDefault();
-        openWorkModal(workId);
+        showDetailView(workId, true);
       }
     });
 
@@ -382,47 +435,43 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         const workId = card.getAttribute("data-work-id");
-        if (workId) openWorkModal(workId);
+        if (workId) showDetailView(workId, true);
       }
     });
   });
 
-  // 閉じるボタンと背景クリックイベント
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => closeWorkModal(true));
+  // ヘッダーの戻るボタンおよびパンくずのTOPクリック
+  const headerBackBtn = document.getElementById("header-back-btn");
+  if (headerBackBtn) {
+    headerBackBtn.addEventListener("click", () => showHomeView(true));
   }
-  if (backdrop) {
-    backdrop.addEventListener("click", () => closeWorkModal(true));
+  const breadcrumbHome = document.getElementById("breadcrumb-home");
+  if (breadcrumbHome) {
+    breadcrumbHome.addEventListener("click", () => showHomeView(true));
   }
-  if (breadcrumbTop) {
-    breadcrumbTop.addEventListener("click", () => closeWorkModal(true));
+  const footerBackBtn = document.getElementById("footer-back-btn");
+  if (footerBackBtn) {
+    footerBackBtn.addEventListener("click", () => showHomeView(true));
   }
 
-  // ESCキーで閉じる
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("is-active")) {
-      closeWorkModal(true);
-    }
-  });
-
-  // ブラウザの戻る・進む（hashchange / popstate）対応
+  // ブラウザの戻る・進む（popstate）対応
   window.addEventListener("popstate", () => {
     const hash = window.location.hash;
     if (hash && hash.startsWith("#work-")) {
       const workId = hash.replace("#work-", "");
       if (worksData[workId]) {
-        openWorkModal(workId);
+        showDetailView(workId, false);
       }
     } else {
-      closeWorkModal(false);
+      showHomeView(false);
     }
   });
 
-  // 初期ロード時のハッシュチェック（直接リンク対応）
+  // 初期ロード時のハッシュチェック（直接リンクでアクセスされた場合）
   if (window.location.hash && window.location.hash.startsWith("#work-")) {
     const initialWorkId = window.location.hash.replace("#work-", "");
     if (worksData[initialWorkId]) {
-      openWorkModal(initialWorkId);
+      showDetailView(initialWorkId, false);
     }
   }
 });
