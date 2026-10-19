@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cs-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9B4993"/>
+      <stop offset="100%" stop-color="#5C2D91"/>
+    </linearGradient>
+    <filter id="cs-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Hexagon background -->
+  <polygon points="64,6 116,36 116,92 64,122 12,92 12,36" fill="url(#cs-grad)" stroke="#C778BE" stroke-width="2"/>
+  <polygon points="64,12 110,39 110,89 64,116 18,89 18,39" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- C Lettermark -->
+  <path d="M 68,43 C 65,37 58,33 48,33 C 32,33 21,46 21,64 C 21,82 32,95 48,95 C 58,95 65,91 68,85 L 58,76 C 56,80 52,83 47,83 C 38,83 32,75 32,64 C 32,53 38,45 47,45 C 52,45 56,48 58,52 Z" fill="#ffffff" filter="url(#cs-shadow)"/>
+  <!-- Hash mark -->
+  <g fill="#E2A9E5">
+    <!-- Horizontal bars (slightly angled) -->
+    <path d="M 76,57 L 105,53 L 104,58 L 75,62 Z"/>
+    <path d="M 74,70 L 103,66 L 102,71 L 73,75 Z"/>
+    <!-- Vertical bars (slanted) -->
+    <path d="M 83,49 L 88,48 L 82,79 L 77,80 Z"/>
+    <path d="M 94,47 L 99,46 L 93,77 L 88,78 Z"/>
+  </g>
+  <text x="64" y="112" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#E2A9E5" text-anchor="middle" letter-spacing="0.5">C#</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="c-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A5FB4"/>
+      <stop offset="100%" stop-color="#003B7B"/>
+    </linearGradient>
+    <filter id="c-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Hexagon background -->
+  <polygon points="64,6 116,36 116,92 64,122 12,92 12,36" fill="url(#c-grad)" stroke="#3689E6" stroke-width="2"/>
+  <!-- Inner hexagon subtle line -->
+  <polygon points="64,12 110,39 110,89 64,116 18,89 18,39" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- C Lettermark -->
+  <path d="M 88,44 C 84,37 76,33 64,33 C 46,33 34,46 34,64 C 34,82 46,95 64,95 C 76,95 84,91 88,84 L 77,75 C 74,79 69,82 63,82 C 53,82 46,74 46,64 C 46,54 53,46 63,46 C 69,46 74,49 77,53 Z" fill="#ffffff" filter="url(#c-shadow)"/>
+  <text x="64" y="112" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#99C1F1" text-anchor="middle" letter-spacing="0.5">LANG</text>
+</svg>

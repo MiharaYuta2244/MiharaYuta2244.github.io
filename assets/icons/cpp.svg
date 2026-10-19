@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cpp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00599C"/>
+      <stop offset="100%" stop-color="#003B6F"/>
+    </linearGradient>
+    <filter id="cpp-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Hexagon background -->
+  <polygon points="64,6 116,36 116,92 64,122 12,92 12,36" fill="url(#cpp-grad)" stroke="#3689E6" stroke-width="2"/>
+  <polygon points="64,12 110,39 110,89 64,116 18,89 18,39" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- C Lettermark -->
+  <path d="M 68,43 C 65,37 58,33 48,33 C 32,33 21,46 21,64 C 21,82 32,95 48,95 C 58,95 65,91 68,85 L 58,76 C 56,80 52,83 47,83 C 38,83 32,75 32,64 C 32,53 38,45 47,45 C 52,45 56,48 58,52 Z" fill="#ffffff" filter="url(#cpp-shadow)"/>
+  <!-- First Plus -->
+  <g fill="#00A2ED">
+    <rect x="73" y="58" width="16" height="5" rx="1.5"/>
+    <rect x="78.5" y="52.5" width="5" height="16" rx="1.5"/>
+  </g>
+  <!-- Second Plus -->
+  <g fill="#00A2ED">
+    <rect x="94" y="58" width="16" height="5" rx="1.5"/>
+    <rect x="99.5" y="52.5" width="5" height="16" rx="1.5"/>
+  </g>
+  <text x="64" y="112" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#99C1F1" text-anchor="middle" letter-spacing="0.5">C++</text>
+</svg>
