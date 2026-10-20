@@ -558,10 +558,10 @@ footer {
 .game-card[data-work-id],
 .work-card[data-work-id] {
   display: block;
-  text-decoration: none;
-  color: inherit;
   cursor: pointer;
   position: relative;
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -590,7 +590,7 @@ footer {
 }
 
 /* =============================================================================
-   Work Detail Full Page View (画面全体が刁E��替わる個別紹介�Eージ)
+   Work Detail Full Page View (画面全体が切り替わる個別紹介ページ)
    ============================================================================= */
 .page-view {
   min-height: 100vh;
@@ -1106,4 +1106,3 @@ footer {
     display: none;
   }
 }
-
