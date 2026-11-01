@@ -46,7 +46,7 @@ const worksData = {
     period: "2ヶ月",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "https://drive.google.com/file/d/1pc28cEpO4dNuYbA4DaMVdhl7_BRI4yYS/view?usp=sharing",
+    videoEmbedUrl: "https://drive.google.com/file/d/1pc28cEpO4dNuYbA4DaMVdhl7_BRI4yYS/preview",
     videoExternalLink: "https://drive.google.com/file/d/1pc28cEpO4dNuYbA4DaMVdhl7_BRI4yYS/view?usp=sharing",
     thumbnail: "assets/kuma-cider.gif",
     summary: "お菓子を集めながら頂上を目指す縦スクロールアクションゲーム。",
@@ -63,7 +63,7 @@ const worksData = {
     period: "2ヶ月",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "https://drive.google.com/file/d/1nr7OaPB0A3PIsdx2MV1Y1QPKb1xW2HTZ/view?usp=sharing",
+    videoEmbedUrl: "https://drive.google.com/file/d/1nr7OaPB0A3PIsdx2MV1Y1QPKb1xW2HTZ/preview",
     videoExternalLink: "https://drive.google.com/file/d/1nr7OaPB0A3PIsdx2MV1Y1QPKb1xW2HTZ/view?usp=sharing",
     thumbnail: "assets/bilypiyo-rumble.gif",
     summary: "電撃とスピード感あふれる対戦型1v1アクションゲーム。",
@@ -80,7 +80,7 @@ const worksData = {
     period: "2ヶ月",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "https://drive.google.com/file/d/1-akeWe8w7qdnD3MusoTbZbjZiB45F_Ci/view?usp=sharing",
+    videoEmbedUrl: "https://drive.google.com/file/d/1-akeWe8w7qdnD3MusoTbZbjZiB45F_Ci/preview",
     videoExternalLink: "https://drive.google.com/file/d/1-akeWe8w7qdnD3MusoTbZbjZiB45F_Ci/view?usp=sharing",
     thumbnail: "assets/soutai-gasa.gif",
     summary: "傘を用いた攻防一体のシューティングアクションゲーム。",
@@ -97,7 +97,7 @@ const worksData = {
     period: "10日間",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "https://drive.google.com/file/d/1AHyhGBNcpOPuGqz2_X6CJvENnlpqsdSX/view?usp=sharing",
+    videoEmbedUrl: "https://drive.google.com/file/d/1AHyhGBNcpOPuGqz2_X6CJvENnlpqsdSX/preview",
     videoExternalLink: "https://drive.google.com/file/d/1AHyhGBNcpOPuGqz2_X6CJvENnlpqsdSX/view?usp=sharing",
     thumbnail: "assets/new-work.gif",
     summary: "10日間という短期制作の中で完成度を追求した探索型2Dアクション。",
@@ -287,7 +287,7 @@ function renderWorkDetail(data) {
     commentHtml = `
       <section class="detail-comment-section">
         <div class="detail-section-title">
-          <span>03</span> 紹介コメント・技術的な取り組み
+          <span>03</span> 紹介コメント
         </div>
         <div class="detail-comment-card">
           ${formatComment(data.comment)}
@@ -298,7 +298,7 @@ function renderWorkDetail(data) {
     commentHtml = `
       <section class="detail-comment-section">
         <div class="detail-section-title">
-          <span>03</span> 紹介コメント・技術的な取り組み
+          <span>03</span> 紹介コメント
         </div>
         <div class="detail-comment-card">
           <p class="comment-p" style="color: var(--muted);">紹介コメント準備中（main.js の comment に文章を設定できます）</p>
