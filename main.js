@@ -33,13 +33,7 @@ const worksData = {
     fallbackThumbnail: "assets/smash-out.jpg",
     summary: "今までの学びの集大成として制作中の個人プロジェクトです。できるだけUIに頼らず、プレイヤーがパッと見でゲーム内の状況を理解できることを意識して制作しています。",
     comment: `【作品コンセプト・概要】
-
-
-【技術的ポイント・こだわり】
-・
-・
-・
-・`,
+    UIを使わずにゲームの状況をプレイヤーに伝えたい`,
   },
 
   "kuma-cider": {
@@ -52,11 +46,11 @@ const worksData = {
     period: "2ヶ月",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "",
-    videoExternalLink: "",
+    videoEmbedUrl: "https://drive.google.com/file/d/1pc28cEpO4dNuYbA4DaMVdhl7_BRI4yYS/view?usp=sharing",
+    videoExternalLink: "https://drive.google.com/file/d/1pc28cEpO4dNuYbA4DaMVdhl7_BRI4yYS/view?usp=sharing",
     thumbnail: "assets/kuma-cider.gif",
     summary: "お菓子を集めながら頂上を目指す縦スクロールアクションゲーム。",
-    comment: ``,
+    comment: `プレイヤーの挙動をはじめインゲームのほぼ全てを担当しました`,
   },
 
   "bilypiyo-rumble": {
@@ -69,11 +63,11 @@ const worksData = {
     period: "2ヶ月",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "",
-    videoExternalLink: "",
+    videoEmbedUrl: "https://drive.google.com/file/d/1nr7OaPB0A3PIsdx2MV1Y1QPKb1xW2HTZ/view?usp=sharing",
+    videoExternalLink: "https://drive.google.com/file/d/1nr7OaPB0A3PIsdx2MV1Y1QPKb1xW2HTZ/view?usp=sharing",
     thumbnail: "assets/bilypiyo-rumble.gif",
     summary: "電撃とスピード感あふれる対戦型1v1アクションゲーム。",
-    comment: ``,
+    comment: `UIやゲーム中すべてのモデル作成、リザルトシーンの作成を担当しました`,
   },
 
   "soutai-gasa": {
@@ -86,11 +80,11 @@ const worksData = {
     period: "2ヶ月",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "",
-    videoExternalLink: "",
+    videoEmbedUrl: "https://drive.google.com/file/d/1-akeWe8w7qdnD3MusoTbZbjZiB45F_Ci/view?usp=sharing",
+    videoExternalLink: "https://drive.google.com/file/d/1-akeWe8w7qdnD3MusoTbZbjZiB45F_Ci/view?usp=sharing",
     thumbnail: "assets/soutai-gasa.gif",
     summary: "傘を用いた攻防一体のシューティングアクションゲーム。",
-    comment: ``,
+    comment: `企画やプレイヤー、観客の挙動を担当しました`,
   },
 
   "maou": {
@@ -103,11 +97,11 @@ const worksData = {
     period: "10日間",
     members: "3人（チーム制作）",
     githubUrl: "",
-    videoEmbedUrl: "",
-    videoExternalLink: "",
+    videoEmbedUrl: "https://drive.google.com/file/d/1AHyhGBNcpOPuGqz2_X6CJvENnlpqsdSX/view?usp=sharing",
+    videoExternalLink: "https://drive.google.com/file/d/1AHyhGBNcpOPuGqz2_X6CJvENnlpqsdSX/view?usp=sharing",
     thumbnail: "assets/new-work.gif",
-    summary: "10日間という短期制作ハッカソンの中で完成度を追求した探索型2Dアクション。",
-    comment: ``,
+    summary: "10日間という短期制作の中で完成度を追求した探索型2Dアクション。",
+    comment: `アプリケーション部分のコードほぼすべてを担当しました。10日間で4種類の武器、5種類の雑魚敵、4種類のボスの実装を実現することができました`,
   }
 };
 
